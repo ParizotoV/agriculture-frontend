@@ -1,7 +1,8 @@
+import type { Farm } from "@/entities/Farm";
 import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "../atoms/SectionTitle";
-import { Farm, FarmCard } from "../molecules/FarmCard";
+import { FarmCard } from "../molecules/FarmCard";
 
 const SectionWrapper = styled.section`
   margin-top: ${({ theme }) => theme.spacing.xl};

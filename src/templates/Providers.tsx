@@ -4,9 +4,9 @@ import { SidebarProvider } from "@/context/SidebarContext";
 import { store } from "@/store/store";
 import React from "react";
 import { Provider as ReduxProvider } from "react-redux";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, type DefaultTheme } from "styled-components";
 
-const theme = {
+const theme: DefaultTheme = {
   colors: {
     primary: "#2E7D32",
     secondary: "#8D6E63",
@@ -14,11 +14,15 @@ const theme = {
     support: "#A5D6A7",
 
     background: "#FAF9F6",
+    backgroundSecondary: "#F0EFEC",
+    backgroundHover: "#F9F8F6",
+
     sidebar: "#ECE5DC",
     text: "#333333",
+    textDark: "#222222",
     textSecondary: "#757575",
-
     border: "#DDDDDD",
+    error: "#E53935",
   },
   spacing: {
     xs: "0.5rem",
@@ -28,6 +32,7 @@ const theme = {
     xl: "3rem",
   },
   fontSizes: {
+    xs: "0.75rem",
     sm: "0.875rem",
     md: "1rem",
     lg: "1.25rem",

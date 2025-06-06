@@ -12,6 +12,10 @@ declare module "styled-components" {
       text: string;
       textSecondary: string;
       border: string;
+      textDark: string;
+      error: string;
+      backgroundSecondary: string;
+      backgroundHover: string;
     };
     spacing: {
       xs: string;
@@ -21,6 +25,7 @@ declare module "styled-components" {
       xl: string;
     };
     fontSizes: {
+      xs: string;
       sm: string;
       md: string;
       lg: string;

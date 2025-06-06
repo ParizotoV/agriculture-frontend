@@ -14,7 +14,6 @@ import type { AppDispatch, RootState } from "@/store/store";
 
 import { CropFormData, cropSchema } from "@/app/crops/[id]/edit/schema/schema";
 
-import type { Crop } from "@/entities/Crop";
 import { Button } from "../atoms/Button";
 import { ErrorMessage } from "../atoms/ErrorMessage";
 import { FormField } from "../atoms/FormField";
@@ -58,24 +57,32 @@ export const NewCropForm: React.FC = () => {
 
   const onSubmit = async (data: CropFormData) => {
     try {
-      const newCropPayload: Partial<Omit<Crop, "id">> = {
-        farmId: data.farmId,
-        cultureName: data.cultureName,
-        season: data.season,
-      };
+      const farmId = data.farmId;
+      const cultureName = data.cultureName;
+      const season = data.season;
 
+      let harvestQuantity = 0;
       if (data.harvestQuantity) {
-        const val = parseFloat(data.harvestQuantity.replace(",", "."));
-        newCropPayload.harvestQuantity = val;
+        const parsed = parseFloat(data.harvestQuantity.replace(",", "."));
+        harvestQuantity = isNaN(parsed) ? 0 : parsed;
       }
 
+      let priceReceived = 0;
       if (data.priceReceived) {
-        const clean = data.priceReceived
+        const cleaned = data.priceReceived
           .replace(/[^0-9,-]/g, "")
           .replace(",", ".");
-        const val = parseFloat(clean);
-        newCropPayload.priceReceived = val;
+        const parsed = parseFloat(cleaned);
+        priceReceived = isNaN(parsed) ? 0 : parsed;
       }
+
+      const newCropPayload = {
+        farmId,
+        cultureName,
+        season,
+        harvestQuantity,
+        priceReceived,
+      };
 
       const resultAction = await dispatch(createCrop(newCropPayload));
 
