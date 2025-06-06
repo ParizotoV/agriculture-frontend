@@ -1,6 +1,6 @@
 # AgroApp
 
-Aplicação web para gerenciamento de produtores, fazendas e culturas, construída com Next.js 13, React, Redux Toolkit, React Hook Form, Zod, Styled-Components e Recharts. 
+Aplicação web para gerenciamento de produtores, fazendas e culturas, construída com Next.js 15, React, Redux Toolkit, React Hook Form, Zod, Styled-Components e Recharts. 
 
 > **Obs.** Este README está escrito em Português, mas os comandos de terminal são universais.
 
@@ -41,7 +41,7 @@ O **AgroApp** é uma aplicação web que permite ao usuário:
 - Navegar pela aplicação usando um layout que combina **NavBar** fixa, **Sidebar** recolhível/colapsável e menu responsivo.
 - Buscar Produtores dinamicamente (filtro por nome ou CPF/CNPJ).
 
-A interface utiliza React 18 com Next.js 13 (App Router), Redux Toolkit para gerenciamento de estado global, Styled-Components para estilização e Recharts para visualização de dados.
+A interface utiliza React 20 com Next.js 15 (App Router), Redux Toolkit para gerenciamento de estado global, Styled-Components para estilização e Recharts para visualização de dados.
 
 ---
 
@@ -77,8 +77,8 @@ A interface utiliza React 18 com Next.js 13 (App Router), Redux Toolkit para ger
 
 ## Tecnologias Utilizadas
 
-- **Next.js 13** (App Router, Server/Client Components)
-- **React 18**  
+- **Next.js 15** (App Router, Server/Client Components)
+- **React 20**  
 - **Redux Toolkit** (createSlice, createAsyncThunk)  
 - **React Redux**  
 - **React Hook Form** + **Zod** (validação de formulários)  
